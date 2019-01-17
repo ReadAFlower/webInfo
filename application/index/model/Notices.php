@@ -36,6 +36,7 @@ class Notices extends BaseModel
         return array_merge($resData, $rowData);
     }
 
+    //删除单条notice
     public function dataDel($where)
     {
         $noticeID = intval($where);
@@ -54,4 +55,5 @@ class Notices extends BaseModel
         return $res;
 
     }
+
 }

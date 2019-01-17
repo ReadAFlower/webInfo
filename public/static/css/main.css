@@ -1,0 +1,58 @@
+html,body,div,span,p,a,form,input,select,button,table,tbody,tr,th,td,h1,h2,h3,h4{margin: 0;padding: 0;}
+body{background: #000;}
+.main{height:94%;background: #fff;margin-top:2%;margin-left:30px;margin-right:30px;overflow: hidden;overflow-x: scroll;overflow-y: scroll;}
+h1{text-align: center;height: 50px;line-height: 50px;}
+.tips{margin-left: 20px;height: 21px;line-height: 21px;font-size: 16px;color:red;}
+.web_list{margin-bottom: 10px;}
+.web_list table{margin-left:10px;margin-right:10px;margin-top:10px;background: #CCE8CF;border-color: #eee;text-align: center;}
+.web_list table th{min-width: 50px;height: 30px;line-height: 30px;font-size: 18px;white-space: nowrap;padding: 0 5px;}
+.web_list .domain_name,.web_list .agent{white-space: nowrap}
+.web_list table td{line-height:36px;padding: 0 5px;}
+.web_list table .do_actions{white-space: nowrap;padding-left: 5px;padding-right: 5px;}
+.web_list table tr td input{text-align: center;height: 38px;}
+.pages{margin: 20px auto;}
+.box_notice{position: fixed;left:0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index: 100;display: none;}
+#ad_box{position:relative;width:30%;height:270px;margin: 10% auto;background: #ffffff;display: none;}
+#ad_box textarea{display: block;height:150px;width:60%;margin:auto;}
+.sub{display: block;width: 100%;text-align: center;margin:20px auto;overflow: hidden;}
+.box_head{background:#ccc;height:24px;line-height:24px;width:100%;}
+.icon{display:block;padding:0 10px;}
+.icon-memory{float:left;}
+.icon-close{float:right;font-size:18px;}
+form{margin:30px auto;}
+.sub a{display:block;text-align:center;float:left;text-decoration: none; background: #ccc;color: #fff;height: 24px;line-height: 24px;border-radius: 5%;}
+#notice_update_sub, #ad_notice{margin-left:30%;width:15%;}
+#rest_notice{margin-left:10%;width:15%;}
+.sub a:hover{background: #CCE8CF;}
+
+#list_box{position:relative;display: none;width: 40%;height: 550px;background: #ffffff;margin: 2% auto;z-index: 5}
+#list_box table{margin: 20px auto;text-align: center;line-height: 24px;width: 96%;}
+#list_box .list_no{width: 10%;}
+#list_box .notice_cnt{width: 40%;}
+#list_box .at_time{width: 20%;}
+#list_box .notice_do{width: 30%;}
+
+.web_list_pages,.notice_page{text-align: center;margin-left: 10px;margin-top: 20px;}
+.web_list_pages a,.web_list_pages span,.notice_page a,.notice_page span{display:block;float:left;height: 24px;line-height: 24px;margin-right:5px;min-width: 24px; }
+.web_list_pages a,.web_list_pages span,.notice_page a{border:1px solid #ccc;}
+.web_list_pages .page_now,.notice_page .page_now{background: #fde6e6;border:1px solid #fde6e6;}
+.page_pre, .page_next{text-decoration: solid;}
+
+.search_box{margin-left: 30px;}
+#do_search,#cancel_search{background: #666;text-decoration: none;border-radius: 5%;color: #fff;}
+.red{color: #ff0000;}
+
+#upload_file{position: fixed;left:0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index: 100;display: none;}
+#file_form{position: absolute;width: 20%;height: 30%;left: 40%;top: 35%;background: #fff;border: 1px double #000;text-align: left;line-height: 28px;z-index: 5;}
+#file_datas{display: block;width: 63%;margin: 15% auto;}
+#upload_file form span{display: block;width: 100%;line-height: 18px;background: #ccc;}
+#do_insert{display: block;float: left;width: 15%;margin-left: 20%;line-height: 18px;background: #eee;border: 1px double #333;}
+#do_cancel{display: block;float: left;width: 15%;border: 1px double #333;background: #eee;text-decoration: none;margin-left: 20%;line-height: 18px;color: #000;text-align: center;}
+#do_insert:hover{cursor: pointer;}
+
+#download_datas{display: none;position: fixed;left:0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index: 100;}
+#filed_datas .download_filed{display:block;width: 33%;line-height: 18px;text-align: center;background: #eee;margin-right: 0.2%;margin-bottom: 0.5%;float: left;}
+#filed_datas .checked{background: #e4efe5;}
+#filed_datas .download_filed:hover{cursor: pointer;}
+#download_btn{display: block;width: 100%;margin: 20px auto;text-align: center;}
+#download_btn a{display: block;width: 20%;float: left;margin-left:20%; border: 1px double #333;background: #eee;text-decoration: none;color: #000;}

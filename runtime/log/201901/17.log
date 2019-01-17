@@ -1,0 +1,3314 @@
+---------------------------------------------------------------
+[ 2019-01-17T09:13:47+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.260015s] [吞吐率：3.85req/s] [内存消耗：1,721.13kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T09:13:49+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.350020s] [吞吐率：2.86req/s] [内存消耗：3,171.13kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.043003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.015000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517447628 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516151628 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517447628 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516151628 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:18:06+08:00 ] 127.0.0.1 POST webinfo.com/update
+[运行时间：0.406023s] [吞吐率：2.46req/s] [内存消耗：3,231.22kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '67',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'field' => '{"agent_rat":"2018-01-18"}',
+  'domainID' => '173',
+  'table' => 'm',
+)
+[ info ] [ RUN ] app\index\controller\Index->update[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` WHERE  `domain_id` = 173 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `web_main`  SET `agent_rat`=1516204800  WHERE  `domain_id` = 173 [ RunTime:0.038002s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:18:07+08:00 ] 127.0.0.1 GET webinfo.com/webList/1
+[运行时间：0.280016s] [吞吐率：3.57req/s] [内存消耗：3,171.11kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517447887 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516151887 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517447887 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516151887 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:19:59+08:00 ] 127.0.0.1 POST webinfo.com/update
+[运行时间：0.315018s] [吞吐率：3.17req/s] [内存消耗：3,231.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'update',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '67',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'field' => '{"agent_rat":"2018-01-18"}',
+  'domainID' => '158',
+  'table' => 'm',
+)
+[ info ] [ RUN ] app\index\controller\Index->update[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` WHERE  `domain_id` = 158 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] UPDATE `web_main`  SET `agent_rat`=1516204800  WHERE  `domain_id` = 158 [ RunTime:0.052003s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:19:59+08:00 ] 127.0.0.1 GET webinfo.com/webList/1
+[运行时间：0.278015s] [吞吐率：3.60req/s] [内存消耗：3,171.09kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.008000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.007001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517447999 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516151999 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517447999 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516151999 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:25:46+08:00 ] 127.0.0.1 GET webinfo.com/webList/2
+[运行时间：0.286017s] [吞吐率：3.50req/s] [内存消耗：3,171.12kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517448346 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516152346 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517448346 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516152346 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:31:43+08:00 ] 127.0.0.1 POST webinfo.com/getImFiled
+[运行时间：0.310018s] [吞吐率：3.23req/s] [内存消耗：3,125.80kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getImFiled',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '9',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'table' => 'all',
+)
+[ info ] [ RUN ] app\index\controller\Index->getImFiled[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_server [ RunTime:0.030001s ]
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_seo [ RunTime:0.019001s ]
+---------------------------------------------------------------
+[ 2019-01-17T09:31:49+08:00 ] 127.0.0.1 POST webinfo.com/importData
+[运行时间：2.447140s] [吞吐率：0.41req/s] [内存消耗：7,831.05kb] [文件加载：102]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'importData',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '44',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'table' => 'all',
+  'filedArr' => '{"0":"all"}',
+)
+[ info ] [ RUN ] app\index\controller\Index->importData[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM main_server_seo [ RunTime:0.186011s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `main_server_seo` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `main_server_seo` [ RunTime:0.026002s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:21:01+08:00 ] 127.0.0.1 GET webinfo.com/webList/1
+[运行时间：0.371021s] [吞吐率：2.70req/s] [内存消耗：3,172.98kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'pageSize' => NULL,
+  'order' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517451660 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516155660 LIMIT 1 [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517451661 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516155661 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:21:43+08:00 ] 127.0.0.1 POST webinfo.com/cntSearch
+[运行时间：0.288016s] [吞吐率：3.47req/s] [内存消耗：3,143.50kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'cntSearch',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '40',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'search_type' => 'main',
+  'search_cnt' => 'baidu-pk.com',
+)
+[ info ] [ RUN ] app\index\controller\Index->cntSearch[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` WHERE  `domain` LIKE '%baidu-pk.com%' [ RunTime:0.017001s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:23:05+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.293016s] [吞吐率：3.41req/s] [内存消耗：3,172.91kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'pageSize' => NULL,
+  'order' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517451785 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516155785 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517451785 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516155785 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:26:34+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.308018s] [吞吐率：3.25req/s] [内存消耗：1,721.91kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T10:26:35+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.343019s] [吞吐率：2.92req/s] [内存消耗：3,172.91kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'pageSize' => NULL,
+  'order' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517451995 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516155995 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517451995 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516155995 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:40:00+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.240013s] [吞吐率：4.17req/s] [内存消耗：1,722.88kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T10:40:01+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.309018s] [吞吐率：3.24req/s] [内存消耗：3,173.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517452800 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516156800 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517452800 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516156800 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:40:04+08:00 ] 127.0.0.1 GET webinfo.com/webList/2
+[运行时间：0.281016s] [吞吐率：3.56req/s] [内存消耗：3,174.00kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517452804 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516156804 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517452804 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516156804 LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:42:45+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.123007s] [吞吐率：8.13req/s] [内存消耗：3,148.46kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'null',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517452965 LIMIT 1 [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516156965 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517452965 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516156965 LIMIT 1 [ RunTime:0.005000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:48:32+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.286016s] [吞吐率：3.50req/s] [内存消耗：1,873.32kb] [文件加载：37]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T10:48:32+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.307017s] [吞吐率：3.26req/s] [内存消耗：3,173.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517453312 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516157312 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517453312 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516157312 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:48:54+08:00 ] 127.0.0.1 POST webinfo.com/getImFiled
+[运行时间：0.308017s] [吞吐率：3.25req/s] [内存消耗：3,128.28kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getImFiled',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '9',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'table' => 'all',
+)
+[ info ] [ RUN ] app\index\controller\Index->getImFiled[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_server [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_seo [ RunTime:0.009000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:48:59+08:00 ] 127.0.0.1 POST webinfo.com/importData
+[运行时间：1.636094s] [吞吐率：0.61req/s] [内存消耗：7,833.80kb] [文件加载：102]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'importData',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'content-length' => '44',
+  'accept' => '*/*',
+  'origin' => 'http://webinfo.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'table' => 'all',
+  'filedArr' => '{"0":"all"}',
+)
+[ info ] [ RUN ] app\index\controller\Index->importData[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM main_server_seo [ RunTime:0.040003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `main_server_seo` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `main_server_seo` [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:56:10+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.245014s] [吞吐率：4.08req/s] [内存消耗：1,873.47kb] [文件加载：37]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T10:56:11+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.303017s] [吞吐率：3.30req/s] [内存消耗：3,173.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517453771 LIMIT 1 [ RunTime:0.006001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516157771 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517453771 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516157771 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:56:14+08:00 ] 127.0.0.1 GET webinfo.com/showMSVInfo/1
+[运行时间：0.318018s] [吞吐率：3.14req/s] [内存消耗：3,170.02kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'showMSVInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->showMSVInfo[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM main_server [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `main_server` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `main_server` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `domain_rat` < 1517453774 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `domain_rat` < 1516157774 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `agent_rat` < 1517453774 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `agent_rat` < 1516157774 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T10:56:21+08:00 ] 127.0.0.1 GET webinfo.com/showMSVInfo/2
+[运行时间：0.304018s] [吞吐率：3.29req/s] [内存消耗：3,170.26kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'showMSVInfo',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->showMSVInfo[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM main_server [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `main_server` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `main_server` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `domain_rat` < 1517453781 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `domain_rat` < 1516157781 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `agent_rat` < 1517453781 LIMIT 1 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `main_server` WHERE  `agent_rat` < 1516157781 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:15:16+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.238014s] [吞吐率：4.20req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:15:17+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.298017s] [吞吐率：3.36req/s] [内存消耗：3,174.28kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517454917 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516158917 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517454917 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516158917 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:45:17+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.248014s] [吞吐率：4.03req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:45:18+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.319018s] [吞吐率：3.13req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517456718 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516160718 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517456718 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516160718 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:46:04+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.242014s] [吞吐率：4.13req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:46:05+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.302017s] [吞吐率：3.31req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517456765 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516160765 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517456765 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516160765 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:47:38+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.240014s] [吞吐率：4.17req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:47:39+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.329019s] [吞吐率：3.04req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.013000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517456859 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516160859 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517456859 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516160859 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:49:20+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.244014s] [吞吐率：4.10req/s] [内存消耗：1,707.04kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:49:21+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.324018s] [吞吐率：3.09req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517456961 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516160961 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517456961 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516160961 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:50:55+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.245014s] [吞吐率：4.08req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:50:56+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.313018s] [吞吐率：3.19req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457055 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161055 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457055 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161055 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:51:44+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.241014s] [吞吐率：4.15req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:51:45+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.302017s] [吞吐率：3.31req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.012001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457105 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161105 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457105 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161105 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:52:58+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.241014s] [吞吐率：4.15req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:52:59+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.308017s] [吞吐率：3.25req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457179 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161179 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457179 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161179 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:53:44+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.243014s] [吞吐率：4.11req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:53:45+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.375022s] [吞吐率：2.67req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.082005s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457225 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161225 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457225 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161225 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:56:45+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.246014s] [吞吐率：4.06req/s] [内存消耗：1,706.87kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:56:46+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.294017s] [吞吐率：3.40req/s] [内存消耗：3,173.97kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457406 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161406 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457406 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161406 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:57:30+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.243014s] [吞吐率：4.11req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:57:31+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.379022s] [吞吐率：2.64req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.033002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457451 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161451 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457451 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161451 LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2019-01-17T11:57:35+08:00 ] 127.0.0.1 GET webinfo.com/webList/null/[object%20Object]
+[运行时间：0.734042s] [吞吐率：1.36req/s] [内存消耗：3,183.30kb] [文件加载：47]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => 'null ',
+  'order' => '[object Object]',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ error ] [0]不支持的数据表达式:[object[D:\phpstudy\WWW\webinfo.com\thinkphp\library\think\db\builder\Mysql.php:113]
+---------------------------------------------------------------
+[ 2019-01-17T11:59:43+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.241014s] [吞吐率：4.15req/s] [内存消耗：1,707.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T11:59:44+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.302017s] [吞吐率：3.31req/s] [内存消耗：3,174.30kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517457584 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516161584 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517457584 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516161584 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:47:09+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.243014s] [吞吐率：4.11req/s] [内存消耗：1,709.85kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T13:47:10+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.529030s] [吞吐率：1.89req/s] [内存消耗：3,122.77kb] [文件加载：47]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2]json_decode() expects parameter 1 to be string, array given[D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php:49]
+---------------------------------------------------------------
+[ 2019-01-17T13:47:18+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.492028s] [吞吐率：2.03req/s] [内存消耗：3,122.52kb] [文件加载：47]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2]json_decode() expects parameter 1 to be string, array given[D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php:49]
+---------------------------------------------------------------
+[ 2019-01-17T13:50:07+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.241014s] [吞吐率：4.15req/s] [内存消耗：1,711.37kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T13:50:08+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.293017s] [吞吐率：3.41req/s] [内存消耗：3,178.84kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464208 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168208 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464208 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168208 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:50:58+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.240014s] [吞吐率：4.17req/s] [内存消耗：1,711.37kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T13:50:59+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.302017s] [吞吐率：3.31req/s] [内存消耗：3,178.84kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464258 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168258 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464258 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168258 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:51:09+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain%22:%22asc%22%7D
+[运行时间：0.293017s] [吞吐率：3.41req/s] [内存消耗：3,178.82kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain":"asc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464268 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168268 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464268 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168268 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:51:48+08:00 ] 127.0.0.1 GET webinfo.com/webList/2/%7B%7D
+[运行时间：0.298017s] [吞吐率：3.36req/s] [内存消耗：3,178.91kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => '{}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464307 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168307 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464307 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168307 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:55:34+08:00 ] 127.0.0.1 GET webinfo.com/webList/2/%7B%22domain_rat%22:%22asc%22%7D
+[运行时间：0.299017s] [吞吐率：3.34req/s] [内存消耗：3,178.61kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => '{"domain_rat":"asc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain_rat` ASC LIMIT 30,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464534 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168534 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464534 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168534 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:56:14+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.243014s] [吞吐率：4.11req/s] [内存消耗：1,711.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T13:56:15+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.318018s] [吞吐率：3.14req/s] [内存消耗：3,178.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.013001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.006000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464575 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168575 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464575 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168575 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:56:34+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22web_lrat%22:%22desc%22%7D
+[运行时间：0.293017s] [吞吐率：3.41req/s] [内存消耗：3,178.53kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"web_lrat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `web_lrat` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464594 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168594 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464594 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168594 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:56:44+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22agent_rat%22:%22desc%22%7D
+[运行时间：0.292017s] [吞吐率：3.42req/s] [内存消耗：3,178.65kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"agent_rat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` DESC LIMIT 0,30 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464603 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168603 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464603 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168603 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:56:48+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain_rat%22:%22desc%22%7D
+[运行时间：0.302017s] [吞吐率：3.31req/s] [内存消耗：3,178.58kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain_rat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain_rat` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464608 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168608 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464608 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168608 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:57:24+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain%22:%22desc%22%7D
+[运行时间：0.289016s] [吞吐率：3.46req/s] [内存消耗：3,178.49kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.008001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464644 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168644 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464644 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168644 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T13:57:58+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain%22:%22desc%22%7D
+[运行时间：0.301018s] [吞吐率：3.32req/s] [内存消耗：3,178.77kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.011001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517464678 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516168678 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517464678 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516168678 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:08:41+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.242014s] [吞吐率：4.13req/s] [内存消耗：1,711.37kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T14:08:42+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.301017s] [吞吐率：3.32req/s] [内存消耗：3,178.84kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465322 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169322 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465322 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169322 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:08:45+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain%22:%22desc%22%7D
+[运行时间：0.289017s] [吞吐率：3.46req/s] [内存消耗：3,178.77kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465325 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169325 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465325 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169325 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:09:00+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22web_lrat%22:%22desc%22,%22domain%22:%22desc%22%7D
+[运行时间：0.297017s] [吞吐率：3.37req/s] [内存消耗：3,179.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"web_lrat":"desc","domain":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `web_lrat` DESC,`domain` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465340 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169340 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465340 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169340 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:10:14+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22web_srat%22:%22desc%22,%22domain%22:%22desc%22,%22web_lrat%22:%22desc%22%7D
+[运行时间：0.287017s] [吞吐率：3.48req/s] [内存消耗：3,179.15kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"web_srat":"desc","domain":"desc","web_lrat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `web_srat` DESC,`domain` DESC,`web_lrat` DESC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465413 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169413 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465413 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169413 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:10:19+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain_rat%22:%22desc%22,%22domain%22:%22desc%22,%22web_lrat%22:%22desc%22,%22web_srat%22:%22desc%22%7D
+[运行时间：0.288016s] [吞吐率：3.47req/s] [内存消耗：3,179.17kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain_rat":"desc","domain":"desc","web_lrat":"desc","web_srat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain_rat` DESC,`domain` DESC,`web_lrat` DESC,`web_srat` DESC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465419 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169419 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465419 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169419 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:10:41+08:00 ] 127.0.0.1 GET webinfo.com/webList/2/%7B%22domain%22:%22asc%22,%22web_lrat%22:%22asc%22,%22web_srat%22:%22asc%22,%22domain_rat%22:%22asc%22%7D
+[运行时间：0.292017s] [吞吐率：3.42req/s] [内存消耗：3,178.99kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => '{"domain":"asc","web_lrat":"asc","web_srat":"asc","domain_rat":"asc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` ASC,`web_lrat` ASC,`web_srat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465441 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169441 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465441 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169441 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:10:52+08:00 ] 127.0.0.1 GET webinfo.com/webList/2/%7B%22domain_rat%22:%22desc%22,%22domain%22:%22desc%22,%22web_lrat%22:%22desc%22,%22web_srat%22:%22desc%22%7D
+[运行时间：0.300017s] [吞吐率：3.33req/s] [内存消耗：3,179.00kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => '{"domain_rat":"desc","domain":"desc","web_lrat":"desc","web_srat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain_rat` DESC,`domain` DESC,`web_lrat` DESC,`web_srat` DESC LIMIT 30,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465451 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169451 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465451 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169451 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:12:11+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22domain%22:%22asc%22,%22web_lrat%22:%22asc%22,%22web_srat%22:%22asc%22,%22domain_rat%22:%22asc%22%7D
+[运行时间：0.303017s] [吞吐率：3.30req/s] [内存消耗：3,179.05kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"domain":"asc","web_lrat":"asc","web_srat":"asc","domain_rat":"asc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` ASC,`web_lrat` ASC,`web_srat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465531 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169531 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465531 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169531 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:12:56+08:00 ] 127.0.0.1 GET webinfo.com/webList/2/%7B%22domain%22:%22asc%22,%22web_lrat%22:%22asc%22,%22web_srat%22:%22asc%22,%22domain_rat%22:%22asc%22%7D
+[运行时间：0.290017s] [吞吐率：3.45req/s] [内存消耗：3,178.99kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => '{"domain":"asc","web_lrat":"asc","web_srat":"asc","domain_rat":"asc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `domain` ASC,`web_lrat` ASC,`web_srat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465575 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169575 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465575 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169575 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:13:46+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.298017s] [吞吐率：3.36req/s] [内存消耗：3,178.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465625 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169625 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465625 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169625 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:14:45+08:00 ] 127.0.0.1 GET webinfo.com/
+[运行时间：0.241014s] [吞吐率：4.15req/s] [内存消耗：1,711.30kb] [文件加载：35]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-01-17T14:14:46+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.290016s] [吞吐率：3.45req/s] [内存消耗：3,178.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465685 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169685 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465685 LIMIT 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169685 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:14:49+08:00 ] 127.0.0.1 GET webinfo.com/webList/2/%7B%7D
+[运行时间：0.293017s] [吞吐率：3.41req/s] [内存消耗：3,178.55kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '2',
+  'order' => '{}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 30,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465688 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169688 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465688 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169688 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:15:41+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%7D
+[运行时间：0.318018s] [吞吐率：3.14req/s] [内存消耗：3,178.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465741 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169741 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465741 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169741 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:15:55+08:00 ] 127.0.0.1 GET webinfo.com/webList/1/%7B%22agent_rat%22:%22desc%22%7D
+[运行时间：0.299017s] [吞吐率：3.34req/s] [内存消耗：3,178.65kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => '1',
+  'order' => '{"agent_rat":"desc"}',
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.009000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.009001s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` DESC LIMIT 0,30 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465755 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169755 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465755 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169755 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2019-01-17T14:16:04+08:00 ] 127.0.0.1 GET webinfo.com/webList
+[运行时间：0.303018s] [吞吐率：3.30req/s] [内存消耗：3,178.56kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\webinfo.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'webList',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'webinfo.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'referer' => 'http://webinfo.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=6252186624; XDEBUG_SESSION=XDEBUG_ECLIPSE',
+)
+[ info ] [ PARAM ] array (
+  'pageNow' => NULL,
+  'order' => NULL,
+  'pageSize' => NULL,
+)
+[ info ] [ RUN ] app\index\controller\Index->webList[ D:\phpstudy\WWW\webinfo.com\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:host=127.0.0.1;dbname=webconsole;charset=utf8
+[ sql ] [ SQL ] SHOW FULL COLUMNS FROM web_main [ RunTime:0.010001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `web_main` [ RunTime:0.010000s ]
+[ sql ] [ SQL ] SELECT * FROM `web_main` ORDER BY `agent_rat` ASC,`domain_rat` ASC LIMIT 0,30 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1517465764 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `domain_rat` < 1516169764 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1517465764 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `web_main` WHERE  `agent_rat` < 1516169764 LIMIT 1 [ RunTime:0.001000s ]

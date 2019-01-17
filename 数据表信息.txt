@@ -1,0 +1,99 @@
+主信息
+
+domain_id    
+name（网站名）
+domain（网站域名）
+web_type（PC/移动/自适应）
+main_program(网站后台主程序类型)
+host_url（网站后台地址）
+host_user（后台登录账号）
+host_pwd（后台登录密码）
+web_ldomain(本地建站域名)
+web_lrat(本地建站完成时间)
+web_srat（网站服务器上线时间）
+web_refer(参考站)
+is_mobile(是否存在独立移动站)
+mobile_refer(移动站参考站)
+agent（代理商）
+domain_rat（域名注册时间）
+agent_rat（主机注册时间）
+
+create table if not exists web_main(
+	domain_id int(6) unsigned AUTO_INCREMENT COMMENT '网站ID',
+	domain varchar(128) NOT NULL COMMENT '网站域名',
+	domain_name varchar(64) NOT NULL COMMENT '网站名',
+	web_type enum('PC', '移动站', '自适应') COMMENT '网站类型',
+	main_program varchar(32) DEFAULT NULL COMMENT '网站主程序',
+	host_url varchar(128) DEFAULT NULL COMMENT '网站后台登录地址',
+	host_user varchar(32) DEFAULT NULL COMMENT '后台登录账号',
+	host_pwd varchar(32) DEFAULT NULL COMMENT '后台登录密码',
+	web_ldomain varchar(128) DEFAULT NULL COMMENT '本地建站域名',
+	web_lrat int(10) unsigned DEFAULT 0 COMMENT '本地建站完成时间',
+	web_srat int(10) unsigned DEFAULT 0 COMMENT '网站上线时间',
+	web_refer varchar(128) DEFAULT NULL COMMENT '参考站',
+	is_mobile enum('否','是') COMMENT '是否存在独立移动站',
+	mobile_refer varchar(128) DEFAULT NULL COMMENT '移动站参考站',
+	agent varchar(32) DEFAULT NULL COMMENT '代理商',
+	domain_rat  int(10) unsigned NOT NULL COMMENT '域名注册时间',
+	agent_rat  int(10) unsigned DEFAULT 0 COMMENT '主机注册时间',
+	PRIMARY KEY(domain_id)
+)ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8 COMMENT='网站主信息';
+
+
+服务器信息：
+server_id
+domain_id
+ftp_ip 
+ftp_user
+ftp_pwd
+mysql_ip
+mysql_user
+mysql_pwd
+console_domain(控制台登录地址)
+console_user
+console_pwd
+
+
+CREATE TABLE IF NOT EXISTS web_server(
+	server_id INT(6) UNSIGNED AUTO_INCREMENT COMMENT '服务器信息ID',
+	domain_id INT(6) UNSIGNED COMMENT '网站ID',
+	ftp_ip VARCHAR(128) DEFAULT NULL COMMENT 'FTP登录地址',
+	ftp_user VARCHAR(32) DEFAULT NULL COMMENT 'FTP登录用户名',
+	ftp_pwd VARCHAR(32) DEFAULT NULL COMMENT 'FTP登录密码',
+	mysql_ip VARCHAR(128) DEFAULT NULL COMMENT 'MYSQL登录地址',
+	mysql_user VARCHAR(32) DEFAULT NULL COMMENT 'MYSQL登录用户名',
+	mysql_pwd VARCHAR(32) DEFAULT NULL COMMENT 'MYSQL登录密码',
+	console_domain VARCHAR(128) DEFAULT NULL COMMENT '控制台登录地址',
+	console_user VARCHAR(32) DEFAULT NULL COMMENT '控制台登录用户名',
+	console_pwd VARCHAR(32) DEFAULT NULL COMMENT '控制台登录密码',
+	PRIMARY KEY(id),
+	FOREIGN key(domain_id) references web_main(domain_id)
+)ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8 COMMENT='网站服务器信息';
+
+备忘录信息：
+id
+domain_id
+notice
+
+CREATE TABLE IF NOT EXISTS web_notices(
+	id INT(6) UNSIGNED AUTO_INCREMENT COMMENT '备忘录信息ID',
+	domain_id INT(6) UNSIGNED COMMENT '网站ID',
+	notice varchar(512) DEFAULT NULL COMMENT '备忘信息内容',
+	PRIMARY KEY(id),
+	FOREIGN key(domain_id) references web_main(domain_id)
+)ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8 COMMENT='网站备忘录信息';
+
+seo信息
+seo_id
+domain_id
+keywords
+
+CREATE TABLE IF NOT EXISTS web_seo(
+	seo_id INT(6) UNSIGNED AUTO_INCREMENT COMMENT 'ID',
+	domain_id INT(6) UNSIGNED COMMENT '网站ID',
+	seo_keywords varchar(512) DEFAULT NULL COMMENT '网站关键词',
+	PRIMARY KEY(id),
+	FOREIGN key(domain_id) references web_main(domain_id)
+)ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COMMENT='网站seo信息';
+
+	

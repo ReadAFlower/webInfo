@@ -2,7 +2,9 @@
 namespace app\index\model;
 
 use think\Db;
+use think\Exception;
 use think\Model;
+use think\Url;
 
 class BaseModel extends Model
 {
@@ -20,18 +22,22 @@ class BaseModel extends Model
         return $col;
     }
 
-    public function getBaseInfo($pageNow = 1, $pageSize = 12, $table= '')
+    public function getBaseInfo($pageNow = 1, $order = [], $pageSize = 30, $table= '')
     {
         if (empty($table)){
             $table = $this -> table;
         }
         $table = !empty($table) ? $table : $this -> table;
         $pageNow = intval($pageNow) > 0 ? intval($pageNow) : 1;
-        $pageSize = intval($pageSize) > 0 ? intval($pageSize) : 12;
+        $pageSize = intval($pageSize) > 0 ? intval($pageSize) : 30;
+
+        if (count($order) < 1) {
+            $order = ['agent_rat'=>'asc','domain_rat'=>'asc'];
+        }
 
         //$Info = Db::query('SELECT * FROM '.$table);
         $offset = ($pageNow-1) * $pageSize;
-        $Info = Db::table($table) -> limit($offset,$pageSize) -> select();
+        $Info = Db::table($table) -> order($order) -> limit($offset,$pageSize) -> select();
 
         $InfoRow = count($Info);
 
@@ -50,40 +56,110 @@ class BaseModel extends Model
             }
             foreach ($Info[$i] as $key => $val) {
                 if (empty($Info[$i][$key])) {
+                    if ($key == 'server_id' || $key == 'seo_id'){
+                        continue;
+                    }
                     $Info[$i][$key] = '暂无';
                 }
             }
         }
 
-        return $Info;
+        $numRow = Db::table($table) ->count();
+
+
+        //域名到期
+        //即将过期（包括已过期） 2018-2-1  -- 2019-2-1  提醒时间 2019-1-15  now 2019-1-16 2018-2-1
+        $domain_up_at = Db::table($table)
+            -> where('domain_rat','<', strtotime('-1 year +15 day'))
+            -> count();
+
+        //已过期
+        $domain_expired = Db::table($table)
+            -> where('domain_rat','<', strtotime('-1 year'))
+            -> count();
+        //即将过期但未过期
+        $domain_expire = $domain_up_at - $domain_expired;
+
+        //主机到期
+        //即将过期（包括已过期）
+        $host_up_at = Db::table($table)
+            -> where('agent_rat','<', strtotime('-1 year +15 day'))
+            -> count();
+        //已过期
+        $host_expired = Db::table($table)
+            -> where('agent_rat','<', strtotime('-1 year'))
+            -> count();
+
+        //即将过期但未过期
+        $host_expire = $host_up_at - $host_expired;
+
+        $rowData[] = [
+            'numRow' => $numRow,
+            'domain_expire' => $domain_expire,
+            'domain_expired' => $domain_expired,
+            'host_expire' => $host_expire,
+            'host_expired' => $host_expired
+        ];
+
+        $mainInfo = $Info;
+        //对即将过期 时间处理 ，包括已过期
+        $nowRow = count($mainInfo);
+
+        for ($i = 0; $i < $nowRow; $i++) {
+
+            if (isset($mainInfo[$i]['domain_rat']) && !empty($mainInfo[$i]['domain_rat'])) {
+
+                $tmpDomainTime = $mainInfo[$i]['domain_rat'];
+
+                if (strtotime($tmpDomainTime) < strtotime('-1 year +15 day')) {
+                    $mainInfo[$i]['domain_rat'] = '<span class="red">'.$mainInfo[$i]['domain_rat'].'</span>';
+                }
+                if (strtotime($tmpDomainTime) < strtotime('-1 year')) {
+                    $mainInfo[$i]['domain_rat'] = '<strong>'.$mainInfo[$i]['domain_rat'].'</strong>';
+                }
+            }
+            if (isset($mainInfo[$i]['agent_rat']) && !empty($mainInfo[$i]['agent_rat'])) {
+                $tmpHostTime = $mainInfo[$i]['agent_rat'];
+
+                if (strtotime($tmpHostTime) < strtotime('-1 year +15 day')) {
+                    $mainInfo[$i]['agent_rat'] = '<span class="red">'.$mainInfo[$i]['agent_rat'].'</span>';
+                }
+                if (strtotime($tmpHostTime) < strtotime('-1 year')) {
+                    $mainInfo[$i]['agent_rat'] = '<strong>'.$mainInfo[$i]['agent_rat'].'</strong>';
+                }
+            }
+        }
+
+        return array_merge($mainInfo, $rowData);
     }
 
     public function del($domainID, $field)
     {
         $domainID = intval($domainID);
-        $checkID = self::where('domain_id',$domainID)->value($field);
+//        $checkID = self::where('domain_id',$domainID)->value($field);
+        $res = self::destroy(['domain_id' => $domainID]);
 
-        if ($checkID) {
-            return self::destroy(['domain_id' => $domainID]);
-        }
-
-        return true;
+        return $res;
     }
 
     public static function datChange($data, $domainID, $table = 'main_server_seo')
     {
         $check = Db::table($table) -> where('domain_id',$domainID) -> find();
+
         if (!$check) {
             $data['domain_id'] = $domainID;
-           $resID = Db::table($table) -> insertGetId($data);
-           return $resID;
+
+            $resID = Db::table($table) -> insertGetId($data);
+
+            return $resID;
+        } else {
+            $res = Db::table($table)->where('domain_id',$domainID)->update($data);
+            return $res;
         }
 
-        $res = Db::table($table)->where('domain_id',$domainID)->update($data);
-        return $res;
     }
 
-
+    //快速查找
     public static function search($type, $cnt)
     {
         switch ($type) {
@@ -175,5 +251,171 @@ class BaseModel extends Model
 
         return array_merge($col, $res, $rowData);
 
+    }
+
+    //批量导入数据：update or insert
+    public static function dataImport($data)
+    {
+        if (!is_array($data)) return false;
+        $res['allNum'] = 0;
+        $res['flgNum'] = 0;
+        $mainData = [];
+        $seoData = [];
+        $serverData = [];
+
+        foreach ($data as $key => $val) {
+            $res['allNum'] += 1;
+            $domainID = Db::table('web_main')
+                ->where('domain',trim($val['domain']))
+                ->value('domain_id');
+
+            //数据分表筛选
+            $obj = (new self());
+            $mFiled = $obj -> getColumn('web_main');
+            $sFiled = $obj -> getColumn('web_seo');
+            $svFiled = $obj -> getColumn('web_server');
+
+            foreach ($val as $k => $item) {
+
+                if (isset($mFiled[$k])){
+                    $mainData[$k] = $item;
+                    continue;
+                }
+                if (isset($sFiled[$k])){
+                    $seoData[$k] = $item;
+                    continue;
+                }
+                if (isset($svFiled[$k])){
+                    $serverData[$k] = $item;
+                    continue;
+                }
+            }
+            Db::startTrans();
+            try{
+                //insert or update
+
+                if (!$domainID) {
+
+                    if (count($mainData) > 0) {
+                        if (isset($mainData['web_lrat'])){
+                            $mainData['web_lrat'] = strtotime($mainData['web_lrat']);
+                        }
+                        if (isset($mainData['web_srat'])){
+                            $mainData['web_srat'] = strtotime($mainData['web_srat']);
+                        }
+                        if (isset($mainData['domain_rat'])){
+                            $mainData['domain_rat'] = strtotime($mainData['domain_rat']);
+                        } else {
+                            $mainData['domain_rat'] = time();
+                        }
+                        if (isset($mainData['agent_rat'])){
+                            $mainData['agent_rat'] = strtotime($mainData['agent_rat']);
+                        }
+                        $newDomainID = Db::name('main')
+                            -> insertGetId($mainData);
+                    } else {
+                        return false;
+                    }
+
+                    if (count($seoData) > 0) {
+                        $seoData['domain_id'] = $newDomainID;
+                        Db::name('seo')
+                            -> insert($seoData);
+                    }
+
+                    if (count($serverData) > 0) {
+                        $serverData['domain_id'] = $newDomainID;
+                        Db::name('server')
+                            -> insert($serverData);
+                    }
+
+                } else {
+                    //update
+                    if (count($mainData) > 0){
+                        Db::name('main')
+                            -> where('domain_id', $domainID)
+                            -> update($mainData);
+                    }
+
+                    if (count($serverData) > 0){
+                        //确认server表中是否有数据
+                        $serverID = Db::name('server')
+                            -> where('domain_id',$domainID)
+                            -> value('server_id');
+                        if ($serverID) {
+                            $serverUpdata = Db::name('server')
+                                -> where('server_id', $serverID)
+                                -> update($serverData);
+                        } else {
+                            $serverData['domain_id'] = $domainID;
+                            Db::name('server')
+                                -> insert($serverData);
+                        }
+
+                    }
+
+                    if (count($seoData) > 0) {
+                        //确认seo表中是否有数据
+                        $seoID = Db::name('seo')
+                            -> where('domain_id',$domainID)
+                            -> value('seo_id');
+                        if ($seoID) {
+                            $seoUpdata = Db::name('seo')
+                                -> where('seo_id', $seoID)
+                                -> update($seoData);
+                        } else {
+                            $seoData['domain_id'] = $domainID;
+                            Db::name('seo')
+                                -> insert($seoData);
+                        }
+
+                    }
+                }
+
+
+                $res['flgNum'] += 1;
+                if (isset($serverUpdata) && $serverUpdata == 0){
+                    $res['flgNum'] -= 1;
+                }
+                if (isset($seoUpdata) && $seoUpdata == 0){
+                    $res['flgNum'] -= 1;
+                }
+                Db::commit();
+            }catch (\Exception $e){
+                echo $e->getMessage();
+                exit();
+                Db::rollback();
+            }
+
+            $mainData = [];
+            $seoData = [];
+            $serverData = [];
+
+        }
+
+        return $res;
+
+    }
+
+    public static function importFiled($table)
+    {
+        if (!is_array($table)) return false;
+
+        $tabNum = count($table);
+        $column = [];
+        $objSelf = new self();
+        for ($i = 0; $i < $tabNum; $i++) {
+            $tmpTab = 'web_'.trim($table[$i]);
+            $tmpCol = $objSelf -> getColumn($tmpTab);
+
+            if ($tmpCol) {
+                array_push($column,$tmpCol);
+            }else{
+                continue;
+            }
+
+        }
+
+        return $column;
     }
 }
