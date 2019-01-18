@@ -265,7 +265,7 @@ function dbUpdate() {
                 $(this).siblings().eq(i).append('<input type="text" name="'+Tname+'" value="" table = "'+table+'">');
             }
         }
-        //$(this).parent().find('input').eq(0).focus();
+
         $('#ad_sv').remove();
         $('#cel_sv').remove();
         $(this).siblings().eq(sibLen-1).append(' <a id="ad_sv" href="javascript:;">添加服务器信息</a>  <a id="cel_sv" href="javascript:;">取消</a>');
@@ -287,9 +287,7 @@ function dbUpdate() {
             }
 
             if (numFlg<0){
-                // console.log('svData');
-                // console.log(JSON.stringify(svData));
-                // console.log(domainID);
+
                 if (!svData['ftp_ip'] || !svData['mysql_ip']) {
                     return false;
                 }
@@ -317,16 +315,15 @@ function dbUpdate() {
                             var Nname = $(this).attr('name');
                             $(this).parent().attr('name',Nname);
                             $(this).parent().html('null');
-                        })
+                        });
                         alert('请求失败');
 
                     }
-                })
+                });
 
             }
 
         });
-        console.log($(this).parent().find('input').length);
 
         return false;
     }
@@ -366,12 +363,12 @@ function dbUpdate() {
                     alert('数据修改失败');
                     that.parent().html(tmpVal);
                 }
-            })
+            });
         } else {
             $(this).parent().html(tmpVal);
 
         }
-    })
+    });
 
 }
 
@@ -387,7 +384,7 @@ function serverShow(sStatus,svStatus,pageNow) {
 
                 $('#server').attr('show', 'on');
                 $('#server').html('隐藏服务器信息');
-            })
+            });
         } else {
             $.get('/webList/'+pageNow,function (e) {
 
@@ -395,7 +392,7 @@ function serverShow(sStatus,svStatus,pageNow) {
 
                 $('#server').attr('show', 'off');
                 $('#server').html('显示服务器信息');
-            })
+            });
         }
     }else{
         if (svStatus == 'off') {
@@ -405,7 +402,7 @@ function serverShow(sStatus,svStatus,pageNow) {
 
                 $('#server').attr('show', 'on');
                 $('#server').html('隐藏服务器信息');
-            })
+            });
         } else {
             $.get('/showMSInfo/'+pageNow,function (e) {
 
@@ -413,7 +410,7 @@ function serverShow(sStatus,svStatus,pageNow) {
 
                 $('#server').attr('show', 'off');
                 $('#server').html('显示服务器信息');
-            })
+            });
         }
     }
 }
@@ -429,7 +426,7 @@ function seoShow(sStatus,svStatus,pageNow) {
 
                 $('#seo').attr('show', 'on');
                 $('#seo').html('隐藏SEO信息');
-            })
+            });
         } else {
             $.get('/webList/'+pageNow,function (e) {
 
@@ -437,7 +434,7 @@ function seoShow(sStatus,svStatus,pageNow) {
 
                 $('#seo').attr('show', 'off');
                 $('#seo').html('显示SEO信息');
-            })
+            });
         }
     }else{
         if (sStatus == 'off') {
@@ -447,7 +444,7 @@ function seoShow(sStatus,svStatus,pageNow) {
 
                 $('#seo').attr('show', 'on');
                 $('#seo').html('隐藏SEO信息');
-            })
+            });
         } else {
             $.get('/showMSVInfo/'+pageNow,function (e) {
 
@@ -455,7 +452,7 @@ function seoShow(sStatus,svStatus,pageNow) {
 
                 $('#seo').attr('show', 'off');
                 $('#seo').html('显示SEO信息');
-            })
+            });
         }
     }
 }
@@ -482,7 +479,6 @@ function requestWebList(pageNow,order) {
         type: 'GET',
         url: tmpURL+pageNow+'/'+JSON.stringify(order),
         success: function (e) {
-            //console.log(e);
             if (e) {
                 rewrite(e,pageNow, order);
             } else {

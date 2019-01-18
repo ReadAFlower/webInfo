@@ -99,13 +99,14 @@ class Index extends Controller
                         $server = new Server();
                         $serverCol = $server -> getColumn();
                         foreach ($serverCol as $key=>$value ){
-                            if ($key=='id')
+                            if ($key=='server_id')
                                 continue;
 
                             $serverData[$key] = $data[$key];
                         }
+                        $server -> db() ->insert($serverData);
                     }
-                    $server -> db() ->insert($serverData);
+
 
                    if ($s) {
                        $seoData = [];
@@ -117,8 +118,10 @@ class Index extends Controller
 
                            $seoData[$key] = $data[$key];
                        }
+                       $seo -> db() ->insert($seoData);
                    }
-                   $seo -> db() ->insert($seoData);
+
+                   return $domainID;
                 });
 
             } else {
@@ -137,6 +140,8 @@ class Index extends Controller
                 $domainID = $web -> webInsert($mainData);
             }
 
+            var_dump($domainID);
+            exit();
             return $domainID;
 
         }
@@ -299,7 +304,7 @@ class Index extends Controller
         if (@!empty($_POST['notices']) && @!empty($_POST['domainID'])) {
 
             $noticesData = [];
-            $noticesData['notice'] = trim(json_decode($_POST['notices'],true));
+            $noticesData['notice'] = htmlspecialchars(trim(json_decode($_POST['notices'],true)));
             $noticesData['domain_id'] = intval($_POST['domainID']);
 
             $notices = new Notices();
@@ -362,6 +367,7 @@ class Index extends Controller
     }
 
 
+    //快速查找
     public function cntSearch()
     {
         if (@!empty($_POST['search_type'])){
@@ -436,6 +442,8 @@ class Index extends Controller
     public function txtUploadInsert()
     {
         $filePath=$_FILES["file_datas"]["tmp_name"];
+        if (!preg_match('/\.txt/i', $filePath))
+            return false;
         $fp = fopen($filePath,'r');
 
         $i = 0;

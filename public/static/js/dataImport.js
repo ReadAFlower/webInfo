@@ -39,16 +39,12 @@ $(document).ready(function () {
             }
         }
 
-        console.log(flgAll);
-        console.log(table);
-        console.log($(this).val());
-
         $.ajax({
             type: 'POST',
             url: '/getImFiled',
             data: {'table':table},
             success: function (e) {
-                console.log(e);
+
                 if (e) {
                     var filedData = JSON.parse(e);
                     var len = filedData.length;
@@ -176,15 +172,12 @@ $(document).ready(function () {
                     fieldDataArr[0] = 'all';
                 }
 
-                console.log('begin import');
-                console.log(JSON.stringify(fieldDataArr));
-                console.log(table);
                 $.ajax({
                     type: 'POST',
                     url: '/importData',
                     data: {'table':table, 'filedArr': JSON.stringify(fieldDataArr)},
                     success: function (e) {
-                        console.log(e);
+
                         if (e) {
                             location.href = e;
                         } else {

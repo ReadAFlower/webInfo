@@ -191,6 +191,7 @@ class BaseModel extends Model
                     -> alias('s')
                     -> join('web_main m','s.domain_id = m.domain_id')
                     -> field('s.server_id, m.domain, s.ftp_ip, s.ftp_user, s.ftp_pwd, s.mysql_ip, s.mysql_user, s.mysql_pwd, s.console_domain, s.console_user, s.console_pwd')
+                    -> where($field, 'like', '%'.trim($cnt).'%')
                     -> select();
                 break;
             case 'notice':
@@ -206,6 +207,7 @@ class BaseModel extends Model
                     -> alias('n')
                     -> join('web_main m','n.domain_id = m.domain_id')
                     -> field('n.id, m.domain, n.notice, n.notice_at')
+                    -> where($field, 'like', '%'.trim($cnt).'%')
                     -> select();
                 break;
             case 'seo':
@@ -220,6 +222,7 @@ class BaseModel extends Model
                     -> alias('s')
                     -> join('web_main m','s.domain_id = m.domain_id')
                     -> field('s.seo_id, m.domain, s.seo_keywords')
+                    -> where($field, 'like', '%'.trim($cnt).'%')
                     -> select();
                 break;
             default: break;

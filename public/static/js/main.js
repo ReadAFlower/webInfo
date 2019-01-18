@@ -41,7 +41,6 @@ $(document).ready(function () {
             data: {'sv':sv, 's':s},
             success:function (e) {
                 var clo = JSON.parse(e);
-                //console.log(clo);
 
                 var colLen = $('.tab_tit th').length-1;
                 var rowLen = $('.web_list table tr').length;
@@ -76,7 +75,7 @@ $(document).ready(function () {
         var sStatus = $('#seo').attr('show');
         var sv = null;
         var s = null;
-        //var pageNow = parseInt($('.web_list_pages .page_now').html());
+
         if (svStatus == 'on') {
             sv = 1;
         }
@@ -87,14 +86,15 @@ $(document).ready(function () {
         var inputNum = $('#do_ad').parent().siblings().length;
 
         var adData = {};
-        // console.log($('#do_ad').parent().siblings().length);
-        // console.log($('#do_ad').parent().siblings().eq(16).children('input').attr('name'));
+
         for (var i = 1;i < inputNum;i++) {
             var key = $('#do_ad').parent().siblings().eq(i).children('input').attr('name');
             var val = $('#do_ad').parent().siblings().eq(i).children('input').val();
             adData[key] = val;
         }
-        //console.log(JSON.stringify(adData));
+        console.log(JSON.stringify(adData));
+        console.log(sv);
+        console.log(s);
         $.ajax({
             type: 'POST',
             url: 'http://webinfo.com/addWebInfo',
@@ -126,7 +126,7 @@ $(document).ready(function () {
             pageNow = 1;
         }
         $.get('http://webinfo.com/webList/'+pageNow, function (e) {
-            //console.log(e)
+
             rewrite(e,pageNow);
         });
     });
@@ -143,7 +143,7 @@ $(document).ready(function () {
                 url: '/webDel',
                 data: {'domain_id':domainID},
                 success: function (e) {
-                    console.log(e);
+
                     if (e) {
                         if (pageNow < 2 || $('.web_list table tr').length < 3){
                             pageNow = 1;
@@ -163,7 +163,7 @@ $(document).ready(function () {
                 }
             })
         }
-        console.log(domainID);
+
     });
 
 
@@ -193,10 +193,6 @@ $(document).ready(function () {
             }
         }
 
-        console.log(pageNow);
-        console.log('order');
-        console.log(order);
-
         requestWebList(pageNow,order);
     });
 
@@ -216,15 +212,13 @@ $(document).ready(function () {
             svData[Tinput.eq(k).attr('name')] = Tinput.eq(k).val();
         }
         var pageNow = $('.web_list_pages .page_now').html();
-        console.log(JSON.stringify(svData));
-        console.log(domainID);
-        console.log(table);
+
         $.ajax({
             type: 'POST',
             url: '/update',
             data: {'field':JSON.stringify(svData), 'domainID':domainID, 'table':table},
             success: function (e) {
-                console.log(e);
+
                 if (e) {
 
                     if (pageNow < 2){
@@ -297,10 +291,6 @@ $(document).ready(function () {
             }
         }
 
-        // console.log('order');
-        // console.log(order);
-        // console.log(pageNow);
-        // return false;
         requestWebList(pageNow,order);
     })
 })

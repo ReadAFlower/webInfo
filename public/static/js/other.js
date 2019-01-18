@@ -39,13 +39,9 @@
                         var item = JSON.parse(e);
                         var len = item.length-1;
 
-                        console.log(len);
                         var pageSize = item[len]['numRow'];
-                        console.log(pageSize);
+
                         rewrite(e,1, pageSize, true);
-                        // if (sType == 'main') {
-                        //     rewrite(e,1, pageSize, true);
-                        // }
 
                         $('.web_list ').off('dblclick', 'td');
                     } else {
@@ -55,8 +51,8 @@
                 error: function () {
                     alert('服务器请求失败');
                 }
-            })
-        })
+            });
+        });
 
         //search cancel
         $('.main .action #cancel_search').click(function () {
@@ -74,15 +70,12 @@
             $('#server').html('显示服务器信息');
 
             $('.web_list ').on('dblclick', 'td', dbUpdate);
-        })
+        });
 
         //行列冻结
         var tableTop = $('#main_web_list .web_list').offset().top;
         var mainBoxTop = $('#main_web_list').offset().top;
 
-        // console.log(tableTop);
-        // console.log(mainBoxTop);
-        // console.log(st);
         $('#main_web_list').scroll(function () {
 
             var top = $('#main_web_list').scrollTop();
@@ -101,17 +94,17 @@
                 $('.web_list table tr th').css({"position":"relative","top":"0", 'border-bottom':'0'});
             }
             if (left > 10) {
-                tr.eq(0).children().eq(0).css({"position":"relative","left":(left-10)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
-                tr.eq(0).children().eq(1).css({"position":"relative","left":(left-10)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
-                tr.eq(0).children().eq(2).css({"position":"relative","left":(left-10)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
+                tr.eq(0).children().eq(0).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
+                tr.eq(0).children().eq(1).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
+                tr.eq(0).children().eq(2).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
                 for (var i = 1; i < trLen; i++){
-                    tr.eq(i).children().eq(0).css({"position":"relative","left":(left-10)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
-                    tr.eq(i).children().eq(1).css({"position":"relative","left":(left-10)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
-                    tr.eq(i).children().eq(2).css({"position":"relative","left":(left-10)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                    tr.eq(i).children().eq(0).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                    tr.eq(i).children().eq(1).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                    tr.eq(i).children().eq(2).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
                 }
 
-                $('#main_web_list .web_list_pages').css({"position":"relative","left":(left-10)+"px"});
-                $('#main_web_list .tit').css({"position":"relative","left":(left-10)+"px"});
+                $('#main_web_list .web_list_pages').css({"position":"relative","left":(left-12)+"px"});
+                $('#main_web_list .tit').css({"position":"relative","left":(left-12)+"px"});
             }
             if (left < 1){
                 tr.eq(0).children().eq(0).css({"position":"relative","left":"0",'border-right':'0','background':'#CCE8CF'});
@@ -132,11 +125,12 @@
         //批量导入数据
         $('#insert_webs').click(function () {
             $('#upload_file').css('display','block');
-        })
+        });
+
         //取消批量导入数据
         $('#do_cancel').click(function () {
             $('#upload_file').css('display','none');
-        })
+        });
     })
 
 
