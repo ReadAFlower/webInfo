@@ -6,6 +6,7 @@ h1{text-align: center;height: 50px;line-height: 50px;}
 .web_list{margin-bottom: 10px;}
 .web_list table{margin-left:10px;margin-right:10px;margin-top:10px;background: #CCE8CF;border-color: #eee;text-align: center;}
 .web_list table th{min-width: 50px;height: 30px;line-height: 30px;font-size: 18px;white-space: nowrap;padding: 0 5px;}
+.web_list table tr:hover{background: #77FD85;}
 .web_list .domain_name,.web_list .agent{white-space: nowrap}
 .web_list table td{line-height:36px;padding: 0 5px;}
 .web_list table .do_actions{white-space: nowrap;padding-left: 5px;padding-right: 5px;}
@@ -25,12 +26,12 @@ form{margin:30px auto;}
 #rest_notice{margin-left:10%;width:15%;}
 .sub a:hover{background: #CCE8CF;}
 
-#list_box{position:relative;display: none;width: 40%;height: 550px;background: #ffffff;margin: 2% auto;z-index: 5}
-#list_box table{margin: 20px auto;text-align: center;line-height: 24px;width: 96%;}
-#list_box .list_no{width: 10%;}
-#list_box .notice_cnt{width: 40%;}
-#list_box .at_time{width: 20%;}
-#list_box .notice_do{width: 30%;}
+#list_box{position:relative;display: none;width: 60%;height: 550px;background: #ffffff;margin: 2% auto;z-index: 5}
+#list_box table{margin: 20px auto;text-align: center;line-height: 24px;width: 96%;overflow-y:scroll;}
+#list_box .list_no{width: 5%;}
+#list_box .notice_cnt{width: 50%;}
+#list_box .at_time{width: 25%;}
+#list_box .notice_do{width: 20%;}
 
 .web_list_pages,.notice_page{text-align: center;margin-left: 10px;margin-top: 20px;}
 .web_list_pages a,.web_list_pages span,.notice_page a,.notice_page span{display:block;float:left;height: 24px;line-height: 24px;margin-right:5px;min-width: 24px; }

@@ -441,8 +441,8 @@ class Index extends Controller
     //txt 批量导入数据
     public function txtUploadInsert()
     {
-        $filePath=$_FILES["file_datas"]["tmp_name"];
-        if (!preg_match('/\.txt/i', $filePath))
+        $filePath=$_FILES["file_datas"]["name"];
+        if (!preg_match('/\.txt$/i', $filePath))
             return false;
         $fp = fopen($filePath,'r');
 

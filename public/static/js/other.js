@@ -131,6 +131,16 @@
         $('#do_cancel').click(function () {
             $('#upload_file').css('display','none');
         });
+
+		//鼠标移入整行高亮问题
+		$('.web_list').on('mouseover','table tr',function(){
+
+			$(this).children('td').css('background','#77FD85');
+		})
+		$('.web_list').on('mouseout','table tr',function(){
+			$(this).children('td').css('background','#CCE8CF');
+		})
+
     })
 
 

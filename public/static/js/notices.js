@@ -175,9 +175,7 @@ $(document).ready(function () {
                     $('#ad_box .icon-close').click();
                     var domainTD = $('.web_list td[data_id="'+domainID+'"]').parent().children('td');
                     var domainTDNum = domainTD.length-1;
-
                     domainTD.eq(domainTDNum).children('.list_notices').click();
-                    alert('备忘信息修改成功');
                 } else {
                     alert('数据修改失败');
                 }

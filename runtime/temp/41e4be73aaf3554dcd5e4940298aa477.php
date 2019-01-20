@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html";i:1547693768;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html";i:1547947988;}*/ ?>
 <html lang="zh">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -63,9 +63,11 @@
 
         <div id="list_box">
             <div class="box_head"><i class="icon iconfont icon-memory">备忘录列表</i><i class="icon iconfont icon-close"></i></div>
-            <table border="1" cellpadding="0" cellspacing="0">
-                <tr><th class="list_no">序号</th><th class="notice_cnt">备忘内容</th><th class="at_time">添加时间</th><th class="notice_do">操作</th></tr>
-            </table>
+            <div style="overflow: hidden;overflow-y:scroll;height: 450px;width: 100%;">
+                <table border="1" cellpadding="0" cellspacing="0">
+                    <tr><th class="list_no">序号</th><th class="notice_cnt">备忘内容</th><th class="at_time">添加时间</th><th class="notice_do">操作</th></tr>
+                </table>
+            </div>
             <div class="notice_page">
                 <span class="num_row"></span>
             </div>
@@ -102,10 +104,4 @@
         </div>
     </div>
 </body>
-<script>
-    $(document).ready(function(){
-
-
-    })
-</script>
 </html>
