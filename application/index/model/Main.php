@@ -27,10 +27,10 @@ class Main extends BaseModel
     public function webInsert($data)
     {
         $webInfo = $data;
-        $webInfo['web_lrat'] = strtotime($webInfo['web_lrat']);
-        $webInfo['web_srat'] = strtotime($webInfo['web_srat']);
-        $webInfo['domain_rat'] = strtotime($webInfo['domain_rat']);
-        $webInfo['agent_rat'] = strtotime($webInfo['agent_rat']);
+        $webInfo['web_lrat'] = @strtotime($webInfo['web_lrat']);
+        $webInfo['web_srat'] = @strtotime($webInfo['web_srat']);
+        $webInfo['domain_rat'] = @strtotime($webInfo['domain_rat']);
+        $webInfo['agent_rat'] = @strtotime($webInfo['agent_rat']);
         //$res = $this -> db() -> insert($webInfo);
 
         $res = $this -> db() -> insertGetId($webInfo);

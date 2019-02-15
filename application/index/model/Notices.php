@@ -10,7 +10,7 @@ class Notices extends BaseModel
     public function dataInsert($data)
     {
         if (@!empty($data['notice']) && @!empty($data['domain_id'])){
-            $data['notice'] = trim($data['notice']);
+            $data['notice'] = htmlspecialchars(trim($data['notice']));
             $data['domain_id'] = intval($data['domain_id']);
             $data['notice_at'] = time();
             $res = Notices::create($data);
@@ -23,6 +23,7 @@ class Notices extends BaseModel
 
     public function getList($domainID, $page, $pageSize = 7)
     {
+        $pageSize = intval($pageSize);
         $pageOffset = ((intval($page))-1)*$pageSize;
         $domainID = intval($domainID);
         $resData = Db::name($this->name)
@@ -47,9 +48,9 @@ class Notices extends BaseModel
 
     public function updateCnt($data, $id)
     {
-
+        $id = intval($id);
         $res = Db::name($this -> name)
-            ->where('id',intval($id))
+            ->where('id', $id)
             ->update(['notice' => trim($data)]);
 
         return $res;

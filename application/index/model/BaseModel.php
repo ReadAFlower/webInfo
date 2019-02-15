@@ -11,7 +11,7 @@ class BaseModel extends Model
 
     public function getColumn($table= '')
     {
-        $table = !empty($table) ? $table : $this -> table;
+        $table = !empty($table) ? htmlspecialchars($table) : $this -> table;
 
         $res = Db::query('SHOW FULL COLUMNS FROM '.$table);
         $len = count($res);
@@ -27,7 +27,7 @@ class BaseModel extends Model
         if (empty($table)){
             $table = $this -> table;
         }
-        $table = !empty($table) ? $table : $this -> table;
+        $table = !empty($table) ? htmlspecialchars($table) : $this -> table;
         $pageNow = intval($pageNow) > 0 ? intval($pageNow) : 1;
         $pageSize = intval($pageSize) > 0 ? intval($pageSize) : 30;
 
@@ -100,7 +100,6 @@ class BaseModel extends Model
             'host_expire' => $host_expire,
             'host_expired' => $host_expired
         ];
-
         $mainInfo = $Info;
         //对即将过期 时间处理 ，包括已过期
         $nowRow = count($mainInfo);
@@ -144,6 +143,8 @@ class BaseModel extends Model
 
     public static function datChange($data, $domainID, $table = 'main_server_seo')
     {
+        $domainID = intval($domainID);
+        $table = htmlspecialchars($table);
         $check = Db::table($table) -> where('domain_id',$domainID) -> find();
 
         if (!$check) {
@@ -162,6 +163,7 @@ class BaseModel extends Model
     //快速查找
     public static function search($type, $cnt)
     {
+        $cnt = htmlspecialchars($cnt);
         switch ($type) {
             case 'main':
                 $table = 'web_main';

@@ -41,7 +41,7 @@
 
                         var pageSize = item[len]['numRow'];
 
-                        rewrite(e,1, pageSize, true);
+                        rewrite(e,1,{}, pageSize, true);
 
                         $('.web_list ').off('dblclick', 'td');
                     } else {

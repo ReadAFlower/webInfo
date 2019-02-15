@@ -192,8 +192,8 @@ class Index extends Controller
     //获取表头信息
     public function getCol()
     {
-        $sv = $_POST['sv'];
-        $s = $_POST['s'];
+        $sv = htmlspecialchars($_POST['sv']);
+        $s = htmlspecialchars($_POST['s']);
         if ($sv || $s) {
             $table = 'main';
             if ($sv) {
@@ -219,7 +219,7 @@ class Index extends Controller
         if (isset($_POST['domain_id']) || !empty($_POST['domain_id'])) {
 
            $res = Db::transaction(function (){
-                $domainID = intval(trim($_POST['domain_id']));
+                $domainID = intval($_POST['domain_id']);
 
                 $seo = new Seo();
                 $seo -> del($domainID, 'seo_id');
@@ -249,7 +249,7 @@ class Index extends Controller
 
         if (isset($_POST['field']) && !empty($_POST['field']) && isset($_POST['domainID']) && !empty($_POST['domainID'])){
             $data = json_decode($_POST['field'],true);
-            $tab = trim($_POST['table']);
+            $tab = htmlspecialchars(trim($_POST['table']));
 
             if (isset($data['web_lrat'])) {
                 $data['web_lrat'] = strtotime($data['web_lrat']);
@@ -356,7 +356,7 @@ class Index extends Controller
 
         if (@!empty($_POST['noticeID'])) {
             $noticeID = intval($_POST['noticeID']);
-            $noticeCnt = trim(json_decode($_POST['nNoticeCnt'],true));
+            $noticeCnt = htmlspecialchars(trim(json_decode($_POST['nNoticeCnt'],true)));
             $notice = new Notices();
             $res = $notice -> updateCnt($noticeCnt, $noticeID);
 
@@ -372,9 +372,9 @@ class Index extends Controller
     {
         if (@!empty($_POST['search_type'])){
 
-            $type = trim($_POST['search_type']);
+            $type = htmlspecialchars(trim($_POST['search_type']));
 
-            $cnt = trim($_POST['search_cnt']);
+            $cnt = htmlspecialchars(trim($_POST['search_cnt']));
 
             $searchData = Main::search($type, $cnt);
 
@@ -444,7 +444,7 @@ class Index extends Controller
         $filePath=$_FILES["file_datas"]["name"];
         if (!preg_match('/\.txt$/i', $filePath))
             return false;
-        $fp = fopen($filePath,'r');
+        $fp = @fopen($filePath,'r');
 
         $i = 0;
         $tmpArr = [];
@@ -623,6 +623,7 @@ class Index extends Controller
 
     public static function getALLColumn($length){
         $arrColumn = [];
+        $length = intval($length);
         for ($i=0;$i<$length;$i++){
             $arrColumn[] = self::getCellP($i);
         }
