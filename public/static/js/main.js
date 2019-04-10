@@ -53,6 +53,21 @@ $(document).ready(function () {
                     if (k == 'server_id' || k == 'seo_id')
                         continue;
 
+                    if(k == 'web_status'){
+                        tmpTR += '<td><select name="web_status"><option value="1">监控</option><option value="2">关闭</option></select></td>';
+                        continue;
+                    }
+
+                    if (k == 'web_type'){
+                        tmpTR += '<td><select name="web_type"><option value="1">PC</option><option value="2">移动站</option><option value="3">自适应</option></select></td>';
+                        continue;
+                    }
+
+                    if (k == 'is_mobile'){
+                        tmpTR += '<td><select name="is_mobile"><option value="1">无</option><option value="2">有</option></select></td>';
+                        continue;
+                    }
+
                     tmpTR += '<td><input type="text" name="'+k+'" value=""></td>';
                 }
 
@@ -91,10 +106,15 @@ $(document).ready(function () {
             var key = $('#do_ad').parent().siblings().eq(i).children('input').attr('name');
             var val = $('#do_ad').parent().siblings().eq(i).children('input').val();
             adData[key] = val;
+			var sKey = $('#do_ad').parent().siblings().eq(i).children('select').attr('name');
+			var sVal = $('#do_ad').parent().siblings().eq(i).children('select').val();
+			console.log('select');
+			console.log(sKey);
+			console.log(sVal);
+			adData[sKey] = sVal;
         }
+		
         console.log(JSON.stringify(adData));
-        console.log(sv);
-        console.log(s);
         $.ajax({
             type: 'POST',
             url: 'http://webinfo.com/addWebInfo',
@@ -103,10 +123,11 @@ $(document).ready(function () {
                 if (e) {
 
                     var pageNow = 1;
-                    $.get('http://webinfo.com/webList/'+pageNow, function (e) {
-                        //console.log(e)
-                        rewrite(e,pageNow);
-                    });
+                    requestWebList(pageNow);
+                    // $.get('http://webinfo.com/webList/'+pageNow, function (e) {
+                    //     //console.log(e)
+                    //     rewrite(e,pageNow);
+                    // });
                 } else {
                     alert('信息添加失败');
                 }
@@ -125,10 +146,11 @@ $(document).ready(function () {
         if (!pageNow) {
             pageNow = 1;
         }
-        $.get('http://webinfo.com/webList/'+pageNow, function (e) {
-
-            rewrite(e,pageNow);
-        });
+        // $.get('http://webinfo.com/webList/'+pageNow, function (e) {
+        //
+        //     rewrite(e,pageNow);
+        // });
+        requestWebList(pageNow);
     });
 
     //数据删除
@@ -148,10 +170,11 @@ $(document).ready(function () {
                         if (pageNow < 2 || $('.web_list table tr').length < 3){
                             pageNow = 1;
                         }
-                        $.get('http://webinfo.com/webList/'+pageNow, function (e) {
-                            //console.log(e)
-                            rewrite(e,pageNow);
-                        });
+                        // $.get('http://webinfo.com/webList/'+pageNow, function (e) {
+                        //     //console.log(e)
+                        //     rewrite(e,pageNow);
+                        // });
+                        requestWebList(pageNow);
                         //alert('删除成功');
                     } else {
                         alert('数据删除失败');

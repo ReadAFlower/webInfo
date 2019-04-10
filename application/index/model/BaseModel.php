@@ -32,12 +32,92 @@ class BaseModel extends Model
         $pageSize = intval($pageSize) > 0 ? intval($pageSize) : 30;
 
         if (count($order) < 1) {
-            $order = ['agent_rat'=>'asc','domain_rat'=>'asc'];
+            $order = ['domain_id'=>'desc'];
         }
-
+        $order = array_merge(['web_status'=>'desc'], $order);
         //$Info = Db::query('SELECT * FROM '.$table);
         $offset = ($pageNow-1) * $pageSize;
-        $Info = Db::table($table) -> order($order) -> limit($offset,$pageSize) -> select();
+
+//        //不分级数据查询
+//        $Info = Db::table($table) -> order($order) -> limit($offset,$pageSize) -> select();
+
+
+        //分级查询数据
+        //已关闭监控数据
+        $InfoOff = Db::table($table)
+            -> where('web_status', '=', '关闭')
+            -> order($order)
+            -> limit($offset,$pageSize)
+            -> select();
+
+        $InfoOffCount = count($InfoOff);
+
+        if ($InfoOffCount < $pageSize){
+
+            //主机到期数据（即将到期+已到期）
+            $InfoSOff = Db::table($table)
+                -> where('web_status', '=', '监控')
+                -> where('agent_rat', '<', strtotime('-1 year +15 day'))
+                -> order($order)
+                -> limit($offset,$pageSize-$InfoOffCount)
+                -> select();
+
+            $InfoSOffCount = count($InfoSOff);
+
+            if ($InfoSOffCount+$InfoOffCount < $pageSize){
+
+                //域名到期数据（即将到期+已到期）
+                $InfoDOff = Db::table($table)
+                    -> where('web_status', '=', '监控')
+                    -> where('agent_rat', '>', strtotime('-1 year +15 day'))
+                    -> where('domain_rat', '<', strtotime('-1 year +15 day'))
+                    -> order($order)
+                    -> limit($offset,$pageSize-$InfoOffCount-$InfoSOffCount)
+                    -> select();
+
+                $InfoDOffCount = count($InfoDOff);
+
+                if ($InfoSOffCount+$InfoOffCount+$InfoDOffCount < $pageSize){
+
+                    $InfoOffCountAll = Db:: table($table)
+                        -> where('web_status', '=', '关闭')
+                        ->count();
+                    $InfoSOffCountAll = Db:: table($table)
+                        -> where('web_status', '=', '监控')
+                        -> where('agent_rat', '<', strtotime('-1 year +15 day'))
+                        ->count();
+                    $InfoDOffCountAll = Db:: table($table)
+                        -> where('web_status', '=', '监控')
+                        -> where('agent_rat', '>', strtotime('-1 year +15 day'))
+                        -> where('domain_rat', '<', strtotime('-1 year +15 day'))
+                        ->count();
+
+                    if ($InfoOffCountAll+$InfoSOffCountAll+$InfoDOffCountAll<($pageNow-1)*$pageSize){
+                        $offset = $offset - ($InfoOffCountAll+$InfoSOffCountAll+$InfoDOffCountAll)%$pageSize;
+                    }
+                    $InfoOn = Db::table($table)
+                        -> where('web_status', '=', '监控')
+                        -> where('agent_rat', '>', strtotime('-1 year +15 day'))
+                        -> where('domain_rat', '>', strtotime('-1 year +15 day'))
+                        -> order($order)
+                        -> limit($offset,$pageSize-$InfoOffCount-$InfoSOffCount-$InfoDOffCount)
+                        -> select();
+
+
+                    $Info = array_merge($InfoOff, $InfoSOff, $InfoDOff, $InfoOn);
+                }else{
+                    $Info = array_merge($InfoOff, $InfoSOff, $InfoDOff);
+                }
+
+            }else{
+
+                $Info = array_merge($InfoOff, $InfoSOff);
+
+            }
+
+        }else{
+            $Info = $InfoOff;
+        }
 
         $InfoRow = count($Info);
 
@@ -71,10 +151,12 @@ class BaseModel extends Model
         //即将过期（包括已过期） 2018-2-1  -- 2019-2-1  提醒时间 2019-1-15  now 2019-1-16 2018-2-1
         $domain_up_at = Db::table($table)
             -> where('domain_rat','<', strtotime('-1 year +15 day'))
+            -> where('web_status', '=', '监控')
             -> count();
 
         //已过期
         $domain_expired = Db::table($table)
+            -> where('web_status', '=', '监控')
             -> where('domain_rat','<', strtotime('-1 year'))
             -> count();
         //即将过期但未过期
@@ -83,10 +165,12 @@ class BaseModel extends Model
         //主机到期
         //即将过期（包括已过期）
         $host_up_at = Db::table($table)
+            -> where('web_status', '=', '监控')
             -> where('agent_rat','<', strtotime('-1 year +15 day'))
             -> count();
         //已过期
         $host_expired = Db::table($table)
+            -> where('web_status', '=', '监控')
             -> where('agent_rat','<', strtotime('-1 year'))
             -> count();
 
@@ -100,6 +184,7 @@ class BaseModel extends Model
             'host_expire' => $host_expire,
             'host_expired' => $host_expired
         ];
+
         $mainInfo = $Info;
         //对即将过期 时间处理 ，包括已过期
         $nowRow = count($mainInfo);
@@ -165,7 +250,7 @@ class BaseModel extends Model
     {
         $cnt = htmlspecialchars($cnt);
         switch ($type) {
-            case 'main':
+            case 'main_d':
                 $table = 'web_main';
                 $field = 'domain';
                 $col[0] = (new self()) -> getColumn($table);
@@ -173,9 +258,18 @@ class BaseModel extends Model
                     -> where($field, 'like', '%'.trim($cnt).'%')
                     -> select();
                 break;
+            case 'main_n':
+                $table = 'web_main';
+                $field = 'domain_name';
+                $col[0] = (new self()) -> getColumn($table);
+                $res = Db::table($table)
+                    -> where($field, 'like', '%'.trim($cnt).'%')
+                    -> select();
+                break;
             case 'server':
                 $table = 'web_server';
-                $field = 'ftp_ip';
+                //$field = 'ftp_ip';
+                $field = 'domain';
                 $col[0] = [
                     'server_id' => '服务器信息ID',
                     'domain' => '网站域名',
@@ -198,7 +292,8 @@ class BaseModel extends Model
                 break;
             case 'notice':
                 $table = 'web_notices';
-                $field = 'notice';
+                //$field = 'notice';
+                $field = 'domain';
                 $col[0] = [
                     'id' => '备忘信息ID',
                     'domain' => '网站域名',
@@ -214,7 +309,8 @@ class BaseModel extends Model
                 break;
             case 'seo':
                 $table = 'web_seo';
-                $field = 'seo_keywords';
+                //$field = 'seo_keywords';
+                $field = 'domain';
                 $col[0] = [
                     'seo_id' => 'ID',
                     'domain' => '网站域名',

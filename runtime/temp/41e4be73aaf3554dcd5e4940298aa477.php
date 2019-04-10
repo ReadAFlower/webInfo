@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html";i:1547947988;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:77:"D:\phpstudy\WWW\webinfo.com\public/../application/index\view\index\index.html";i:1551403753;}*/ ?>
 <html lang="zh">
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -27,10 +27,11 @@
                 <span class="search_box"><strong>快速查找：</strong>
                     类别：<select name="search" style="width: 100px;">
                         <option value=""></option>
-                        <option value="main">域名查找</option>
-                        <option value="notice">备忘录信息查找</option>
-                        <option value="seo">SEO关键词查找</option>
-                        <option value="server">服务器信息查找</option>
+                        <option value="main_d">域名</option>
+                        <option value="main_n">网站名</option>
+                        <option value="notice">备忘录信息</option>
+                        <option value="seo">SEO关键词</option>
+                        <option value="server">服务器信息</option>
                     </select>&nbsp;
                     关键词：<input type="text" id="search_cnt" value="" placeholder="请输入查找关键信息" style="width: 120px;">
                     <a id="do_search" href="javascript:;">查 找</a>

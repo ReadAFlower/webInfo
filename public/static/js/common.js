@@ -58,9 +58,10 @@ function rewrite(e, pageNow, order = {}, pageSize = 30, search = false) {
 
 
     }
-    if(!search){
-        $('.web_list table .tab_tit').append('<th class="do_actions">操作</th>');
-    }
+    // if(!search){
+    //     $('.web_list table .tab_tit').append('<th class="do_actions">操作</th>');
+    // }
+    $('.web_list table .tab_tit').append('<th class="do_actions">操作</th>');
 
 
     for (var i = 1; i < dataNum; i++) {
@@ -75,7 +76,7 @@ function rewrite(e, pageNow, order = {}, pageSize = 30, search = false) {
                 flg = 'search';
                 if (k=='domain_id' || k == 'server_id' || k == 'seo_id' || k == 'id'){
 
-                    nTR.append('<td table = "'+flg+'">'+i+'</td>');
+                    nTR.append('<td  data_id = "'+dataList[n][k]+'" table = "'+flg+'">'+i+'</td>');
 
                     continue;
                 }
@@ -112,9 +113,10 @@ function rewrite(e, pageNow, order = {}, pageSize = 30, search = false) {
             //tmp += '<td name="'+k+'">'+dataList[n][k]+'</td>';
             nTR.append('<td name="'+k+'" table = "'+flg+'">'+dataList[n][k]+'</td>');
         }
-        if (!search) {
-            nTR.append('<td class="do_actions"><a class="ad_notice" href="javascript:;">添加备忘录</a> | <a class="list_notices" href="javascript:;">查看备忘录信息</a> | <a class="do_del" href="javascript:;">删除</a></td>');
-        }
+        // if (!search) {
+        //     nTR.append('<td class="do_actions"><a class="ad_notice" href="javascript:;">添加备忘录</a> | <a class="list_notices" href="javascript:;">查看备忘录信息</a> | <a class="do_del" href="javascript:;">删除</a></td>');
+        // }
+        nTR.append('<td class="do_actions"><a class="ad_notice" href="javascript:;">添加备忘录</a> | <a class="list_notices" href="javascript:;">查看备忘录信息</a> | <a class="do_del" href="javascript:;">删除</a></td>');
        // $('table').append('<tr>'+tmp+'</tr>');
         $('.web_list table').append(nTR);
     }
@@ -185,6 +187,16 @@ function pageNav(pageOBJ, numRow, pageNow, pageSize) {
         }
 
     }
+
+    $('.web_list tr').each(function () {
+        var n = $(this).index();
+        if (n){
+            if ($(this).children('td').eq(3).html() == '关闭'){
+                $(this).children('td').css('background','rgb(255,255,0)');
+            }
+        }
+
+    })
 }
 
 
@@ -211,7 +223,7 @@ function noticesDataRerite(e,pageNow) {
 }
 
 function dbUpdate() {
-    if ($('.web_list table input').length>0){
+    if ($('.web_list table input').length>0 || $('.web_list table select').length>0){
         return false;
     }
     var domainID = $(this).siblings().eq(0).attr('data_id');
@@ -243,8 +255,35 @@ function dbUpdate() {
     }
     $(this).html('');
     var tmpName = $(this).attr('name');
-    $(this).append('<input type="text" name="'+tmpName+'" value="'+tmpVal+'" table = "'+table+'">');
-    $(this).children('input').focus();
+    if (tmpName == 'web_status') {
+        if (tmpVal == '监控'){
+            tmpNum=1;
+        } else {
+            tmpNum=2;
+        }
+        $(this).append('<select name="'+tmpName+'"><option value="'+tmpNum+'" selected>'+tmpVal+'</option><option value="1">监控</option><option value="2">关闭</option></select>');
+    }else if (tmpName=='web_type'){
+        if (tmpVal == 'PC'){
+            tmpNum=1;
+        } else if (tmpVal == '移动站') {
+            tmpNum=2;
+        }else {
+            tmpNum=2;
+        }
+        $(this).append('<select name="'+tmpName+'"><option value="'+tmpNum+'" selected>'+tmpVal+'</option><option value="1">PC</option><option value="2">移动站</option><option value="3">自适应</option></select>');
+    }
+    else if (tmpName=='is_mobile'){
+        if (tmpVal == '无'){
+            tmpNum=1;
+        } else{
+            tmpNum=2;
+        }
+        $(this).append('<select name="'+tmpName+'"><option value="'+tmpNum+'" selected>'+tmpVal+'</option><option value="1">无</option><option value="2">有</option></select>');
+    }else{
+        $(this).append('<input type="text" name="'+tmpName+'" value="'+tmpVal+'" table = "'+table+'">');
+        $(this).children('input').focus();
+    }
+
 
     if (table == 'sv' && $('#server').attr('show') == 'on' && !$(this).parent().attr('server_id')){
         console.log(table);
@@ -328,7 +367,7 @@ function dbUpdate() {
         return false;
     }
 
-    //绑定失去焦点事件
+    //input绑定失去焦点事件
     $(this).on('blur', 'input', function () {
 
         var that = $(this);
@@ -369,6 +408,49 @@ function dbUpdate() {
 
         }
     });
+    
+    //select onchange
+    $(this).on('change', 'select', function () {
+        console.log($(this).val());
+        console.log($(this).attr('name'));
+        var that = $(this);
+        var val = $(this).val();
+        var name = $(this).attr('name');
+        var filedData = {};
+        filedData[name] = val;
+        var pageNow = $('.web_list_pages .page_now').html();
+
+        if (val!=tmpVal) {
+            $.ajax({
+                type: 'POST',
+                url: '/update',
+                data: {'field':JSON.stringify(filedData), 'domainID':domainID, 'table':'m'},
+                success: function (e) {
+                    if (e) {
+
+                        if (pageNow < 2){
+                            pageNow = 1;
+                        }
+
+                        requestWebList(pageNow);
+                    } else {
+                        $.get('http://webinfo.com/webList/'+pageNow, function (e) {
+                            //console.log(e)
+                            rewrite(e,pageNow);
+                        });
+                        alert('数据修改失败');
+                    }
+                },
+                error: function () {
+                    alert('数据修改失败');
+                    that.parent().html(tmpVal);
+                }
+            });
+        } else {
+            $(this).parent().html(tmpVal);
+
+        }
+    })
 
 }
 

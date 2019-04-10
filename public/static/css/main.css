@@ -8,9 +8,10 @@ h1{text-align: center;height: 50px;line-height: 50px;}
 .web_list table th{min-width: 50px;height: 30px;line-height: 30px;font-size: 18px;white-space: nowrap;padding: 0 5px;}
 .web_list table tr:hover{background: #77FD85;}
 .web_list .domain_name,.web_list .agent{white-space: nowrap}
-.web_list table td{line-height:36px;padding: 0 5px;}
+.web_list table td{line-height:36px;padding: 0 5px;white-space: nowrap;}
 .web_list table .do_actions{white-space: nowrap;padding-left: 5px;padding-right: 5px;}
 .web_list table tr td input{text-align: center;height: 38px;}
+.web_list table tr td select{height:36px;line-height:36px;width:100%;font-size:14px;}
 .pages{margin: 20px auto;}
 .box_notice{position: fixed;left:0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index: 100;display: none;}
 #ad_box{position:relative;width:30%;height:270px;margin: 10% auto;background: #ffffff;display: none;}

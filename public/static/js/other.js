@@ -98,15 +98,23 @@
                 tr.eq(0).children().eq(1).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
                 tr.eq(0).children().eq(2).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'99','background':'#CCE8CF'});
                 for (var i = 1; i < trLen; i++){
-                    tr.eq(i).children().eq(0).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
-                    tr.eq(i).children().eq(1).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
-                    tr.eq(i).children().eq(2).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                    if (tr.eq(i).children().eq(3).html()=='关闭'){
+                        tr.eq(i).children().eq(0).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'rgb(255,255,0)'});
+                        tr.eq(i).children().eq(1).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'rgb(255,255,0)'});
+                        tr.eq(i).children().eq(2).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'rgb(255,255,0)'});
+                    } else {
+                        tr.eq(i).children().eq(0).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                        tr.eq(i).children().eq(1).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                        tr.eq(i).children().eq(2).css({"position":"relative","left":(left-12)+"px",'border-right':'2px solid #cccccc','z-index':'98','background':'#CCE8CF'});
+                    }
+
                 }
 
                 $('#main_web_list .web_list_pages').css({"position":"relative","left":(left-12)+"px"});
                 $('#main_web_list .tit').css({"position":"relative","left":(left-12)+"px"});
             }
             if (left < 1){
+
                 tr.eq(0).children().eq(0).css({"position":"relative","left":"0",'border-right':'0','background':'#CCE8CF'});
                 tr.eq(0).children().eq(1).css({"position":"relative","left":"0",'border-right':'0','background':'#CCE8CF'});
                 tr.eq(0).children().eq(2).css({"position":"relative","left":"0",'border-right':'0','background':'#CCE8CF'});
@@ -134,11 +142,15 @@
 
 		//鼠标移入整行高亮问题
 		$('.web_list').on('mouseover','table tr',function(){
-
 			$(this).children('td').css('background','#77FD85');
 		})
 		$('.web_list').on('mouseout','table tr',function(){
-			$(this).children('td').css('background','#CCE8CF');
+            if ($(this).children('td').eq(3).html() == '关闭'){
+                $(this).children('td').css('background','rgb(255,255,0)');
+            }else{
+                $(this).children('td').css('background','#CCE8CF');
+            }
+
 		})
 
     })
